@@ -3,16 +3,13 @@
 
   window.dome = function(htmlString, option) {
     var wrapper;
-    if (option == null) {
-      option = 'single';
-    }
-    if (option === 'single') {
+    if (option === void 0) {
       wrapper = document.createElement('div');
     } else {
       wrapper = document.createElement(option);
     }
     wrapper.innerHTML = htmlString;
-    if (wrapper.childNodes.length === 1 && option === 'single') {
+    if (wrapper.childNodes.length === 1 && option === void 0) {
       return wrapper.childNodes[0];
     }
     return wrapper;
